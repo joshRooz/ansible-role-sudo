@@ -4,7 +4,6 @@
     name: "{{ username }}"
     state: present
     shell: "{{ usershell }}"
-    append: yes
 
 - name: install sudo package
   include_tasks:  "{{ ansible_os_family|lower }}.yml"

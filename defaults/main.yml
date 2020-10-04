@@ -1,0 +1,5 @@
+---
+username = sudouser
+usershell = /bin/bash
+
+sudo_pkg_state = present

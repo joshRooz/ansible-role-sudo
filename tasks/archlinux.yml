@@ -1,0 +1,3 @@
+---
+- name: manage archlinux sudo
+  pacman: name=sudo state={{ sudo_pkg_state }}

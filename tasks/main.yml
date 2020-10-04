@@ -1,0 +1,16 @@
+---
+- name: create user
+  user:
+    name: "{{ username }}"
+    state: present
+    shell: "{{ usershell }}"
+    append: yes
+
+- name: install sudo package
+  include_tasks:  "{{ ansible_os_family|lower }}.yml"
+
+- name: enable sudo access
+  template:
+    src: sudoers.user.j2
+    dest: "/etc/sudoers.d/{{ username }}"
+    mode: '0440'
